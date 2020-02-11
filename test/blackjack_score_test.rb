@@ -40,6 +40,12 @@ describe 'Blackjack Score' do
     expect(score).must_equal 14
   end
 
+  it 'handles cases of multiple aces correctly' do
+    hand = ["Ace","Ace","Ace","Ace"]
+    score = blackjack_score(hand)
+    expect(score).must_equal 14
+  end
+
   it 'raises an ArgumentError for invalid cards' do
     hand = ["sugar"]
     expect {
@@ -67,5 +73,4 @@ describe 'Blackjack Score' do
       blackjack_score(hand)
   }.must_raise ArgumentError
   end
-  
 end
